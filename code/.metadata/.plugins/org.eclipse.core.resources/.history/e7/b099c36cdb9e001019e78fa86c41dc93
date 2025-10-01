@@ -222,8 +222,8 @@ void displayLed(int num)
 int numToDisplay[4]={0, 0, 0, 0};
 void updateClockBuffer(int a, int b)
 {
-	numToDisplay[0]=a/10;
 	numToDisplay[1]=a%10;
+	numToDisplay[0]=a/10;
 	numToDisplay[2]=b/10;
 	numToDisplay[3]=b%10;
 }
@@ -300,7 +300,7 @@ int main(void)
 		  second=0;
 		  minute++;
 	  }
-	  if(minute>=60)
+	  if(minute>=0)
 	  {
 		  minute=0;
 		  hour++;

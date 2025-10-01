@@ -219,36 +219,27 @@ void displayLed(int num)
 	}
 }
 
-int numToDisplay[4]={0, 0, 0, 0};
-void updateClockBuffer(int a, int b)
-{
-	numToDisplay[0]=a/10;
-	numToDisplay[1]=a%10;
-	numToDisplay[2]=b/10;
-	numToDisplay[3]=b%10;
-}
-
 int counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (counter==75)
 	{
-		displayLed(numToDisplay[0]);
+		displayLed(1);
 		update7SEG(0);
 	}
 	if (counter==50)
 	{
-		displayLed(numToDisplay[1]);
+		displayLed(2);
 		update7SEG(1);
 	}
 	if(counter==25)
 	{
-		displayLed(numToDisplay[2]);
+		displayLed(3);
 		update7SEG(2);
 	}
     if (counter ==0)
     {
-		displayLed(numToDisplay[3]);
+		displayLed(0);
 		update7SEG(3);
     	HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
     	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
@@ -288,29 +279,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int hour=15;
-  int minute=18;
-  int second=50;
   while (1)
   {
     /* USER CODE END WHILE */
-	  second++;
-	  if(second>=60)
-	  {
-		  second=0;
-		  minute++;
-	  }
-	  if(minute>=60)
-	  {
-		  minute=0;
-		  hour++;
-	  }
-	  if (hour>=24)
-	  {
-		  hour=0;
-	  }
-	  updateClockBuffer(hour, minute);
-	  HAL_Delay(1000);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
