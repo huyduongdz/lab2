@@ -219,33 +219,24 @@ void displayLed(int num)
 	}
 }
 
+int huynum = 0;
 int counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (counter==75)
+	if(huynum>3)
 	{
-		displayLed(1);
-		update7SEG(0);
+		huynum=0;
 	}
-	if (counter==50)
-	{
-		displayLed(2);
-		update7SEG(1);
-	}
-	if(counter==25)
-	{
-		displayLed(3);
-		update7SEG(2);
-	}
+	displayLed(huynum+1);
+	update7SEG(huynum);
     if (counter ==0)
     {
-		displayLed(0);
-		update7SEG(3);
     	HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
     	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
     	counter=100;
     }
     counter--;
+    huynum++;
 }
 
 int main(void)
