@@ -236,7 +236,6 @@ void displayLed(int num)
 }
 
 int numToDisplay[4]={0, 0, 0, 0};
-void updateClockBuffer(int a, int b)
 {
 	numToDisplay[0]=a/10;
 	numToDisplay[1]=a%10;
