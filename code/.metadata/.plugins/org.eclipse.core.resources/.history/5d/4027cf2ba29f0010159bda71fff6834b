@@ -328,7 +328,7 @@ int main(void)
 	  {
 		  setTimer1(250);
 
-		  displayLed(numToDisplay[index_led]);
+		  displayLed[numToDisplay[index_led]];
 		  update7SEG(index_led);
 		  index_led++;
 		  if(index_led>3)
