@@ -443,12 +443,12 @@ int main(void)
 			  if (index_led_matrix < 2) {
 	        	  resetMatrix();
 				  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2 << index_led_matrix, RESET);
-				  updateLEDmatrix(index_led_matrix);
+				  updateLEDMatrix(index_led_matrix);
 				  index_led_matrix++;
 			  } else if (index_led_matrix >= 2){
 	        	  resetMatrix();
 				  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2 << (index_led_matrix + 6), RESET);
-				  updateLEDmatrix(index_led_matrix);
+				  updateLEDMatrix(index_led_matrix);
 				  index_led_matrix++;
 			  }
 	  	  }
