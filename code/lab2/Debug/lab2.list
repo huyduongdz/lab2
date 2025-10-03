@@ -970,7 +970,7 @@ int main(void)
  800072a:	68b9      	ldr	r1, [r7, #8]
  800072c:	68f8      	ldr	r0, [r7, #12]
  800072e:	f7ff ff75 	bl	800061c <updateClockBuffer>
-		  HAL_GPIO_TogglePin ( RED_LED_GPIO_Port , RED_LED_Pin );
+		  HAL_GPIO_TogglePin (RED_LED_GPIO_Port, RED_LED_Pin );
  8000732:	2120      	movs	r1, #32
  8000734:	4812      	ldr	r0, [pc, #72]	; (8000780 <main+0xd8>)
  8000736:	f000 fcc1 	bl	80010bc <HAL_GPIO_TogglePin>
