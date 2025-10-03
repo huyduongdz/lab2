@@ -893,14 +893,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int hour=15;
- 80006c4:	230f      	movs	r3, #15
+  int hour=23;
+ 80006c4:	2317      	movs	r3, #23
  80006c6:	60fb      	str	r3, [r7, #12]
-  int minute=18;
- 80006c8:	2312      	movs	r3, #18
+  int minute=59;
+ 80006c8:	233b      	movs	r3, #59	; 0x3b
  80006ca:	60bb      	str	r3, [r7, #8]
-  int second=50;
- 80006cc:	2332      	movs	r3, #50	; 0x32
+  int second=55;
+ 80006cc:	2337      	movs	r3, #55	; 0x37
  80006ce:	607b      	str	r3, [r7, #4]
   updateClockBuffer(hour, minute);
  80006d0:	68b9      	ldr	r1, [r7, #8]
