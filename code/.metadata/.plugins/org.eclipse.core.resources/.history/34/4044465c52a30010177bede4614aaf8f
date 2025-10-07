@@ -264,14 +264,14 @@ void updateClockBuffer(int a, int b)
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
 uint8_t matrix_buffer[8] = {
-    0b00000000,
-    0b00000000,
     0b00011000,
-    0b00100100,
     0b00111100,
-    0b00100100,
-    0b00100100,
-    0b00000000
+    0b01100110,
+    0b01100110,
+    0b01111110,
+    0b01100110,
+    0b01100110,
+    0b01100110
 };
 void updateColumn(uint8_t data)
 {
@@ -393,7 +393,7 @@ int main(void)
   int index_led = 0;
   setTimer0(1000);
   setTimer1(250);
-  setTimer2(10);
+  setTimer2(50);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -434,7 +434,7 @@ int main(void)
 
 	  if (timer2_flag == 1)
 	  {
-		  setTimer2(10);
+		  setTimer2(50);
 		  updateLEDmatrix(index_led_matrix);
 		  index_led_matrix++;
 		  if(index_led_matrix > 7)

@@ -889,9 +889,9 @@ void updateClockBuffer(int a, int b)
  80006ec:	2000004c 	.word	0x2000004c
 
 080006f0 <updateColumn>:
-    0b01100110,
-    0b01100110,
-    0b01100110
+    0b00100100,
+    0b00100100,
+    0b00000000
 };
 void updateColumn(uint8_t data)
 {
@@ -1196,8 +1196,8 @@ int main(void)
   setTimer1(250);
  80008e8:	20fa      	movs	r0, #250	; 0xfa
  80008ea:	f7ff fc49 	bl	8000180 <setTimer1>
-  setTimer2(50);
- 80008ee:	2032      	movs	r0, #50	; 0x32
+  setTimer2(10);
+ 80008ee:	200a      	movs	r0, #10
  80008f0:	f7ff fc60 	bl	80001b4 <setTimer2>
   while (1)
   {
@@ -1303,8 +1303,8 @@ int main(void)
  8000982:	2b01      	cmp	r3, #1
  8000984:	d1b6      	bne.n	80008f4 <main+0x48>
 	  {
-		  setTimer2(50);
- 8000986:	2032      	movs	r0, #50	; 0x32
+		  setTimer2(10);
+ 8000986:	200a      	movs	r0, #10
  8000988:	f7ff fc14 	bl	80001b4 <setTimer2>
 		  updateLEDmatrix(index_led_matrix);
  800098c:	4b0e      	ldr	r3, [pc, #56]	; (80009c8 <main+0x11c>)
