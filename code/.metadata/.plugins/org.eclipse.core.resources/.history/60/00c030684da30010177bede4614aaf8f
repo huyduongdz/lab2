@@ -416,8 +416,8 @@ int main(void)
   int index_led = 0;
   setTimer0(1000);
   setTimer1(250);
-  setTimer2(10);
-  setTimer3(560);
+  setTimer2(40);
+  setTimer3(1280);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -460,7 +460,7 @@ int main(void)
 
 	  if (timer2_flag == 1)
 	  {
-		  setTimer2(10);
+		  setTimer2(40);
 		  updateLEDmatrix(index_led_matrix);
 		  index_led_matrix++;
 		  if(index_led_matrix > 7)
@@ -468,9 +468,9 @@ int main(void)
 			  index_led_matrix = 0;
 		  }
 	  }
-	  if (timer3_flag == 1)
+	  if (timer2_flag == 1)
 	  {
-		  setTimer3(560);
+		  setTimer3(1280);
 		  shiftLeft(matrix_buffer);
 	  }
     /* USER CODE BEGIN 3 */
