@@ -264,14 +264,14 @@ void updateClockBuffer(int a, int b)
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
 uint8_t matrix_buffer[8] = {
-    0b00011000,
-    0b00111100,
-    0b01100110,
-    0b01100110,
-    0b01111110,
-    0b01100110,
-    0b01100110,
-    0b01100110
+    0x18,
+    0x3C,
+    0x66,
+    0x66,
+    0x7E,
+    0x66,
+    0x66,
+    0x66
 };
 void updateColumn(uint8_t data)
 {

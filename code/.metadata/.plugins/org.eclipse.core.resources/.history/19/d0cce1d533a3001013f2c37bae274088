@@ -263,16 +263,7 @@ void updateClockBuffer(int a, int b)
 
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
-uint8_t matrix_buffer[8] = {
-    0b00011000,
-    0b00111100,
-    0b01100110,
-    0b01100110,
-    0b01111110,
-    0b01100110,
-    0b01100110,
-    0b01100110
-};
+uint8_t matrix_buffer[8] = {0x18, 0x3C, 0x66, 0x66, 0x7E, 0x66, 0x66,0x66};
 void updateColumn(uint8_t data)
 {
     const uint16_t COL_PIN[8] = {
@@ -290,11 +281,11 @@ void updateColumn(uint8_t data)
     {
         if (data & (1 << col))
         {
-            HAL_GPIO_WritePin(GPIOA, COL_PIN[col], GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(GPIOA, COL_PIN[col], GPIO_PIN_SET);
         }
         else
         {
-            HAL_GPIO_WritePin(GPIOA, COL_PIN[col], GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOA, COL_PIN[col], GPIO_PIN_RESET);
         }
     }
 }
@@ -393,7 +384,7 @@ int main(void)
   int index_led = 0;
   setTimer0(1000);
   setTimer1(250);
-  setTimer2(50);
+  setTimer2(125);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -434,7 +425,7 @@ int main(void)
 
 	  if (timer2_flag == 1)
 	  {
-		  setTimer2(50);
+		  setTimer2(125);
 		  updateLEDmatrix(index_led_matrix);
 		  index_led_matrix++;
 		  if(index_led_matrix > 7)

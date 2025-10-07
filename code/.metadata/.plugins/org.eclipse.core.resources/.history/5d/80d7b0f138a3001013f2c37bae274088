@@ -263,16 +263,7 @@ void updateClockBuffer(int a, int b)
 
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
-uint8_t matrix_buffer[8] = {
-    0b00011000,
-    0b00111100,
-    0b01100110,
-    0b01100110,
-    0b01111110,
-    0b01100110,
-    0b01100110,
-    0b01100110
-};
+uint8_t matrix_buffer[8] = {0x01 , 0x02 , 0x03 , 0x04 , 0x05 , 0x06 , 0x07 , 0 x08 };
 void updateColumn(uint8_t data)
 {
     const uint16_t COL_PIN[8] = {
