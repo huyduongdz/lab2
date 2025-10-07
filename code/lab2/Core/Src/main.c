@@ -292,9 +292,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int hour=23;
-  int minute=59;
-  int second=55;
+  int hour=15;
+  int minute=8;
+  int second=50;
   updateClockBuffer(hour, minute);
   int index_led = 0;
   setTimer0(1000);
